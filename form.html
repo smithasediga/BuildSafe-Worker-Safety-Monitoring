@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPE Training</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-blue: #1a365d;
+      --bright-blue: #3182ce;
+      --pale-gray: #f7fafc;
+      --text-dark: #2d3748;
+      --success-green: #38a169;
+      --danger-red: #e53e3e;
+      --light-blue: #ebf8ff;
+      --medium-gray: #e2e8f0;
+    }
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background-color: var(--pale-gray);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+/* Header */
+        header {
+            background:  #1e3c72;
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('') center/cover no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        header .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo-img {
+            height: 90px;
+            margin-right: 1rem;
+        }
+
+        header .logo {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        header .title {
+            font-size: 2.3rem;
+            margin-top: 0.5rem;
+        }
+
+        header .tagline {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            opacity: 2.2;
+        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo i {
+      color: var(--bright-blue);
+      font-size: 1.8rem;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .nav-links a:hover {
+      background-color: var(--bright-blue);
+      transform: translateY(-2px);
+    }
+    .nav-links a i {
+      font-size: 0.9rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto 50px;
+      padding: 30px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      color: var(--deep-blue);
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid var(--bright-blue);
+      position: relative;
+    }
+    h1::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      background-color: var(--bright-blue);
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+    h2 {
+      color: var(--deep-blue);
+      font-size: 1.6rem;
+      margin-top: 0;
+      position: relative;
+      padding-bottom: 8px;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--bright-blue);
+      bottom: 0;
+      left: 0;
+      border-radius: 10px;
+    }
+    .content-section {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 35px;
+      padding: 25px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 0.5s ease-in-out;
+      border-left: 5px solid var(--bright-blue);
+    }
+    .content-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .back-to-menu {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 100;
+        background: #1a365d;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: var(--box-shadow);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: var(--transition);
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    .back-to-menu:hover {
+        background: var(--primary-dark);
+        transform: translateY(-4px);
+        box-shadow: var(--hover-shadow);
+    }
+
+    .back-to-menu-icon {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+    }
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left,
+        .footer-right {
+            text-align: left;
+        }
+
+        .footer-logo {
+            height: 50px;
+        }
+
+    .back-to-menu-icon {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .content-section img, .content-section svg {
+      width: 40%;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+      background-color: white;
+    }
+    .content-section img:hover, .content-section svg:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    .content-text {
+      width: 60%;
+    }
+    .content-text p {
+      margin-top: 0;
+      font-size: 1.05rem;
+    }
+    .content-text ul {
+      padding-left: 20px;
+    }
+    .content-text li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .content-text strong {
+      color: var(--deep-blue);
+    }
+    video {
+      display: block;
+      width: 85%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: var(--bright-blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(49, 130, 206, 0.3);
+    }
+    .btn:hover {
+      background: var(--deep-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(26, 54, 93, 0.4);
+    }
+    .btn:active {
+      transform: translateY(-1px);
+    }
+    .quiz-container {
+      background: var(--light-blue);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      text-align: center;
+      border: 1px solid rgba(49, 130, 206, 0.2);
+      margin-top: 40px;
+    }
+    .quiz-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .quiz-container h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+    #quizAnswer {
+      padding: 12px 15px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid var(--medium-gray);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      margin-bottom: 15px;
+    }
+    #quizAnswer:focus {
+      border-color: var(--bright-blue);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.3);
+    }
+    .quiz-feedback {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: none;
+    }
+    .correct {
+      background-color: var(--success-green);
+      color: white;
+      display: block !important;
+      animation: fadeIn 0.5s;
+    }
+    .incorrect {
+      background-color: var(--danger-red);
+      color: white;
+      display: block !important;
+      animation: fadeIn 0.5s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: var(--deep-blue);
+      color: white;
+      margin-top: 50px;
+      border-top: 5px solid var(--bright-blue);
+      font-size: 0.95rem;
+      position: relative;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      background: var(--deep-blue);
+      border-top: 5px solid var(--bright-blue);
+      border-left: 5px solid var(--bright-blue);
+      transform: translateX(-50%) rotate(45deg);
+    }
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .section-heading i {
+      color: var(--bright-blue);
+      font-size: 1.4rem;
+    }
+    
+    /* Animation classes */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes fadeInOut {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+    
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .rotate-animation {
+      animation: rotate 20s linear infinite;
+    }
+    
+    .pulse-animation {
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    .fade-animation {
+      animation: fadeInOut 3s ease-in-out infinite;
+    }
+
+    /* New Quiz Styles */
+    .quiz-section {
+      margin-top: 50px;
+      border-top: 2px dashed var(--bright-blue);
+      padding-top: 30px;
+    }
+
+    .quiz-section h2 {
+      text-align: center;
+      color: var(--deep-blue);
+      margin-bottom: 30px;
+    }
+
+    .quiz-section h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+
+    .quiz-question {
+      background: var(--light-blue);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+      border-left: 5px solid var(--bright-blue);
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    .quiz-question h3 {
+      color: var(--deep-blue);
+      font-size: 1.3rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quiz-question h3 i {
+      color: var(--bright-blue);
+    }
+
+    .quiz-options {
+      margin-top: 15px;
+    }
+
+    .quiz-option {
+      padding: 12px 15px;
+      background-color: white;
+      border: 2px solid var(--medium-gray);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--bright-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(49, 130, 206, 0.15);
+    }
+
+    .quiz-option input[type="radio"] {
+      margin-right: 15px;
+      accent-color: var(--bright-blue);
+      width: 18px;
+      height: 18px;
+    }
+
+    .quiz-option label {
+      cursor: pointer;
+      flex: 1;
+      font-size: 1.05rem;
+    }
+
+    .quiz-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .feedback-message {
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 15px;
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.5s;
+    }
+
+    .correct-feedback {
+      background-color: var(--success-green);
+      color: white;
+    }
+
+    .incorrect-feedback {
+      background-color: var(--danger-red);
+      color: white;
+    }
+
+    .result-summary {
+      background: linear-gradient(to right, var(--deep-blue), var(--bright-blue));
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 30px;
+      box-shadow: 0 10px 30px rgba(49, 130, 206, 0.3);
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+
+    .result-summary h3 {
+      font-size: 1.8rem;
+      margin-top: 0;
+    }
+
+    .score-display {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+
+    .result-message {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .certificate-button {
+      background-color: white;
+      color: var(--deep-blue);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .certificate-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .certificate-button i {
+      font-size: 1.2rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="https://finelineinfra.com/wp-content/uploads/2024/12/SVG-FINELINE.svg"
+                    alt="FineLine Infra Logo" class="logo-img">
+                <div class="logo"></div>
+            </div>
+            <div>
+                <div class="title">Secure. Aware. Safe.</div>
+                <div class="tagline">Building with care, because every life matters..</div>
+            </div>
+        </div>
+    </header>
+
+  <div class="container">
+    <h1>PPE (Personal Protective Equipment) Training</h1>
+
+    <div class="content-section">
+      <video controls>
+        <source src="videos/ppe-training.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="content-section">
+      <div class="content-text">
+        <div class="section-heading">
+          <i class="fas fa-info-circle"></i>
+          <h2>What is PPE?</h2>
+        </div>
+        <p>Personal Protective Equipment (PPE) refers to specialized clothing or equipment worn by employees to protect against potential workplace hazards. PPE acts as a critical barrier that prevents injuries and minimizes exposure to dangerous substances, ensuring the safety and well-being of workers across various industries.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="content-text">
+        <div class="section-heading">
+          <i class="fas fa-shield-alt"></i>
+          <h2>Why is PPE Important?</h2>
+        </div>
+        <p>PPE plays a vital role in workplace safety by ensuring compliance with regulatory safety standards and significantly reducing the risk of accidents and injuries. Proper use of PPE protects workers from both immediate hazards and long-term exposure risks, maintaining their health and safety throughout their professional lives.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" class="pulse-animation">
+        <!-- Background -->
+        <rect width="800" height="450" rx="20" fill="#f2f7fd" />
+        
+        <!-- Worker figure with PPE -->
+        <g class="float-animation">
+          <!-- Body -->
+          <rect x="350" y="230" width="100" height="150" rx="10" fill="#3182ce" />
+          
+          <!-- Head with helmet -->
+          <circle cx="400" cy="200" r="40" fill="#ffeb3b" />
+          <path d="M360 200 Q400 150 440 200" fill="#ffeb3b" stroke="#e53e3e" stroke-width="3" />
+          
+          <!-- Face -->
+          <circle cx="385" cy="190" r="5" fill="#2d3748" />
+          <circle cx="415" cy="190" r="5" fill="#2d3748" />
+          <path d="M385 220 Q400 230 415 220" stroke="#2d3748" stroke-width="3" fill="none" />
+          
+          <!-- Arms with gloves -->
+          <rect x="300" y="240" width="50" height="15" rx="5" fill="#3182ce" />
+          <rect x="450" y="240" width="50" height="15" rx="5" fill="#3182ce" />
+          <circle cx="300" cy="247" r="12" fill="#ff9800" />
+          <circle cx="500" cy="247" r="12" fill="#ff9800" />
+          
+          <!-- Boots -->
+          <rect x="350" y="380" width="40" height="15" rx="5" fill="#2d3748" />
+          <rect x="410" y="380" width="40" height="15" rx="5" fill="#2d3748" />
+        </g>
+        
+        <!-- Safety symbols -->
+        <g class="fade-animation">
+          <!-- Shield -->
+          <path d="M150 150 L200 120 L250 150 L250 250 Q200 290 150 250 Z" fill="none" stroke="#3182ce" stroke-width="4" />
+          <text x="200" y="200" text-anchor="middle" font-size="40" font-weight="bold" fill="#3182ce">✓</text>
+          
+          <!-- Warning sign -->
+          <path d="M550 150 L600 250 L500 250 Z" fill="none" stroke="#e53e3e" stroke-width="4" />
+          <text x="550" y="220" text-anchor="middle" font-size="40" font-weight="bold" fill="#e53e3e">!</text>
+        </g>
+        
+        <!-- PPE text -->
+        <text x="400" y="100" text-anchor="middle" font-size="36" font-weight="bold" fill="#1a365d">PPE SAVES LIVES</text>
+        
+        <!-- Animated pulse rings -->
+        <circle cx="400" cy="225" r="180" fill="none" stroke="#3182ce" stroke-width="2" opacity="0.3" class="pulse-animation" />
+        <circle cx="400" cy="225" r="220" fill="none" stroke="#3182ce" stroke-width="2" opacity="0.2" class="pulse-animation" style="animation-delay: 0.5s" />
+        <circle cx="400" cy="225" r="260" fill="none" stroke="#3182ce" stroke-width="2" opacity="0.1" class="pulse-animation" style="animation-delay: 1s" />
+      </svg>
+      <div class="content-text">
+        <div class="section-heading">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h2>Importance of PPE</h2>
+        </div>
+        <p>PPE serves as the last line of defense against workplace hazards, protecting workers from falling objects, chemical exposure, and harmful airborne particles. Properly selected and worn PPE can be the difference between a minor incident and a severe injury, ensuring workers return home safely each day.</p>
+      </div>
+    </div>
+
+    <div class="content-section" style="flex-direction: row-reverse;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+        <!-- Background -->
+        <rect width="800" height="450" rx="20" fill="#f8fafc" />
+        
+        <!-- Title -->
+        <text x="400" y="50" text-anchor="middle" font-size="30" font-weight="bold" fill="#1a365d">TYPES OF PPE</text>
+        
+        <!-- PPE Items with animations -->
+        <!-- Hard Hat -->
+        <g class="float-animation" style="animation-delay: 0.2s">
+          <path d="M150 120 Q200 80 250 120 L250 150 Q200 170 150 150 Z" fill="#ffeb3b" stroke="#e53e3e" stroke-width="2" />
+          <text x="200" y="200" text-anchor="middle" font-size="14" fill="#2d3748">Head Protection</text>
+        </g>
+        
+        <!-- Safety Goggles -->
+        <g class="float-animation" style="animation-delay: 0.4s">
+          <ellipse cx="350" cy="120" rx="30" ry="20" fill="none" stroke="#3182ce" stroke-width="3" />
+          <ellipse cx="450" cy="120" rx="30" ry="20" fill="none" stroke="#3182ce" stroke-width="3" />
+          <path d="M380 120 L420 120" stroke="#3182ce" stroke-width="3" fill="none" />
+          <text x="400" y="200" text-anchor="middle" font-size="14" fill="#2d3748">Eye Protection</text>
+        </g>
+        
+        <!-- Ear Protection -->
+        <g class="float-animation" style="animation-delay: 0.6s">
+          <path d="M600 100 Q620 80 640 100 L640 130 Q620 150 600 130 Z" fill="#9f7aea" stroke="#2d3748" stroke-width="2" />
+          <path d="M600 100 L590 140" stroke="#2d3748" stroke-width="2" />
+          <text x="600" y="200" text-anchor="middle" font-size="14" fill="#2d3748">Hearing Protection</text>
+        </g>
+        
+        <!-- Respirator -->
+        <g class="float-animation" style="animation-delay: 0.8s">
+          <path d="M200 280 Q250 250 300 280 Q250 320 200 280 Z" fill="#e2e8f0" stroke="#2d3748" stroke-width="2" />
+          <path d="M220 270 L280 270" stroke="#2d3748" stroke-width="1" />
+          <path d="M220 290 L280 290" stroke="#2d3748" stroke-width="1" />
+          <text x="250" y="350" text-anchor="middle" font-size="14" fill="#2d3748">Respiratory Protection</text>
+        </g>
+        
+        <!-- Gloves -->
+        <g class="float-animation" style="animation-delay: 1s">
+          <path d="M400 250 Q410 230 420 250 Q430 230 440 250 Q450 230 460 250 Q470 230 480 250 L480 300 Q440 320 400 300 Z" fill="#ff9800" stroke="#2d3748" stroke-width="2" />
+          <text x="440" y="350" text-anchor="middle" font-size="14" fill="#2d3748">Hand Protection</text>
+        </g>
+        
+        <!-- Safety Boots -->
+        <g class="float-animation" style="animation-delay: 1.2s">
+          <path d="M600 250 L650 250 L660 300 L590 300 Z" fill="#2d3748" stroke="#2d3748" stroke-width="2" />
+          <path d="M590 290 L580 290 L580 280 L590 280" fill="#2d3748" stroke="#2d3748" stroke-width="2" />
+          <rect x="600" y="270" width="50" height="5" fill="#ff9800" />
+          <text x="620" y="350" text-anchor="middle" font-size="14" fill="#2d3748">Foot Protection</text>
+        </g>
+      </svg>
+      <div class="content-text">
+        <div class="section-heading">
+          <i class="fas fa-list-ul"></i>
+          <h2>Types of PPE</h2>
+        </div>
+        <p>PPE is categorized based on the type of protection it provides:</p>
+        <ul>
+          <li><strong>Head Protection:</strong> Helmets and hard hats to prevent head injuries from falling objects and impacts.</li>
+          <li><strong>Eye and Face Protection:</strong> Safety glasses, goggles, and face shields to protect against flying particles, chemicals, and splashes.</li>
+          <li><strong>Hearing Protection:</strong> Earplugs and earmuffs to prevent hearing damage from loud noises and machinery.</li>
+<li><strong>Respiratory Protection:</strong> Respirators and masks that filter harmful airborne particles and contaminants.</li>
+          <li><strong>Hand Protection:</strong> Various types of gloves designed to protect against cuts, chemicals, burns, and biological hazards.</li>
+          <li><strong>Foot Protection:</strong> Safety boots and shoes with protective toe caps and slip-resistant soles.</li>
+          <li><strong>Body Protection:</strong> Coveralls, aprons, and specialized clothing to protect against chemical splashes, heat, and other hazards.</li>
+          <li><strong>Fall Protection:</strong> Harnesses, lanyards, and other equipment that prevent falls from heights.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="content-text">
+        <div class="section-heading">
+          <i class="fas fa-check-circle"></i>
+          <h2>Proper Use of PPE</h2>
+        </div>
+        <p>Wearing PPE correctly is crucial to ensuring it provides the intended protection:</p>
+        <ul>
+          <li><strong>Training:</strong> Ensure you receive proper training on how to use, wear, and maintain each piece of PPE.</li>
+         <li><strong>Inspection:</strong> Always inspect PPE before use to check for damage or wear that could compromise its effectiveness.</li>
+          <li><strong>Fit:</strong> Ensure PPE fits properly - too loose or too tight equipment can reduce effectiveness and increase risk.</li>
+          <li><strong>Maintenance:</strong> Clean and maintain your PPE according to manufacturer instructions to extend its lifespan.</li>
+          <li><strong>Replacement:</strong> Replace damaged or worn PPE immediately, as compromised equipment offers reduced protection.</li>
+          <li><strong>Storage:</strong> Store PPE in clean, dry areas away from direct sunlight and chemical exposure when not in use.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-section" style="flex-direction: row-reverse;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" class="rotate-animation">
+        <!-- Background -->
+        <rect width="800" height="450" rx="20" fill="#f2f7fd" />
+        
+        <!-- Central warning symbol -->
+        <polygon points="400,100 500,300 300,300" fill="none" stroke="#e53e3e" stroke-width="8" />
+        <text x="400" y="250" text-anchor="middle" font-size="80" font-weight="bold" fill="#e53e3e">!</text>
+        
+        <!-- Circular arrows -->
+        <path d="M400 225 m-150,0 a150,150 0 1,0 300,0 a150,150 0 1,0 -300,0" fill="none" stroke="#3182ce" stroke-width="4" stroke-dasharray="20,10" />
+        
+        <!-- Common mistakes text points -->
+        <circle cx="200" cy="120" r="10" fill="#e53e3e" />
+        <text x="220" y="125" font-size="14" fill="#1a365d">Not inspecting before use</text>
+        
+        <circle cx="180" cy="200" r="10" fill="#e53e3e" />
+        <text x="200" y="205" font-size="14" fill="#1a365d">Wearing damaged PPE</text>
+        
+        <circle cx="200" cy="280" r="10" fill="#e53e3e" />
+        <text x="220" y="285" font-size="14" fill="#1a365d">Incorrect sizing</text>
+        
+        <circle cx="300" cy="350" r="10" fill="#e53e3e" />
+        <text x="320" y="355" font-size="14" fill="#1a365d">Poor maintenance</text>
+        
+        <circle cx="500" cy="350" r="10" fill="#e53e3e" />
+        <text x="520" y="355" font-size="14" fill="#1a365d">Improper storage</text>
+        
+        <circle cx="600" cy="280" r="10" fill="#e53e3e" />
+        <text x="550" y="285" text-anchor="end" font-size="14" fill="#1a365d">Removing PPE in hazard areas</text>
+        
+        <circle cx="620" cy="200" r="10" fill="#e53e3e" />
+        <text x="600" y="205" text-anchor="end" font-size="14" fill="#1a365d">Using wrong PPE for the task</text>
+        
+        <circle cx="600" cy="120" r="10" fill="#e53e3e" />
+        <text x="580" y="125" text-anchor="end" font-size="14" fill="#1a365d">Skipping PPE altogether</text>
+      </svg>
+      <div class="content-text">
+        <div class="section-heading">
+          <i class="fas fa-exclamation-circle"></i>
+          <h2>Common PPE Mistakes</h2>
+        </div>
+        <p>Avoid these common mistakes to maximize the effectiveness of your PPE:</p>
+        <ul>
+          <li><strong>Not performing pre-use inspection</strong> - Always check for damage before wearing.</li>
+          <li><strong>Wearing wrong size or type</strong> - Ensure you have the correct PPE for your specific task.</li>
+          <li><strong>Removing PPE in hazardous areas</strong> - Keep PPE on until completely clear of all hazards.</li>
+          <li><strong>Poor maintenance</strong> - Regular cleaning and proper storage extends effectiveness.</li>
+          <li><strong>Ignoring wear and damage</strong> - Replace compromised PPE immediately.</li>
+          <li><strong>Improper donning and doffing</strong> - Follow the correct sequence when putting on and removing PPE.</li>
+          <li><strong>Neglecting training</strong> - Stay updated on proper PPE protocols and requirements.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <div class="content-text">
+        <div class="section-heading">
+          <i class="fas fa-hard-hat"></i>
+          <h2>PPE Regulations & Standards</h2>
+        </div>
+        <p>Personal Protective Equipment is regulated by various standards and regulations to ensure worker safety:</p>
+        <ul>
+          <li><strong>OSHA Requirements:</strong> In the United States, the Occupational Safety and Health Administration establishes and enforces workplace PPE standards.</li>
+          <li><strong>CE Marking:</strong> In Europe, PPE must meet European standards and display the CE mark indicating compliance.</li>
+          <li><strong>ANSI Standards:</strong> The American National Standards Institute develops technical specifications for various types of PPE.</li>
+          <li><strong>ISO Standards:</strong> International Organization for Standardization provides global standards for PPE quality and performance.</li>
+          <li><strong>Manufacturer Guidelines:</strong> Always follow specific manufacturer recommendations for use, care, and replacement.</li>
+        </ul>
+        <p>Employers are required to assess workplace hazards, provide appropriate PPE, and ensure workers are properly trained in its use. Workers have the responsibility to use and maintain PPE as directed.</p>
+      </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz-section">
+      <h2>PPE Knowledge Assessment</h2>
+      
+      <div id="quizContainer">
+        <div class="quiz-question" id="question1">
+          <h3><i class="fas fa-question-circle"></i> Question 1</h3>
+          <p>What does PPE stand for?</p>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="q1" id="q1a" value="a">
+              <label for="q1a">Professional Protection Equipment</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q1" id="q1b" value="b">
+              <label for="q1b">Personal Protective Equipment</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q1" id="q1c" value="c">
+              <label for="q1c">Proper Performance Equipment</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q1" id="q1d" value="d">
+              <label for="q1d">Professional Procedure Equipment</label>
+            </div>
+          </div>
+          <div class="feedback-message" id="feedback1"></div>
+        </div>
+        
+        <div class="quiz-question hidden" id="question2">
+          <h3><i class="fas fa-question-circle"></i> Question 2</h3>
+          <p>Which of the following is NOT a category of Personal Protective Equipment?</p>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="q2" id="q2a" value="a">
+              <label for="q2a">Head Protection</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q2" id="q2b" value="b">
+              <label for="q2b">Hearing Protection</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q2" id="q2c" value="c">
+              <label for="q2c">Productivity Protection</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q2" id="q2d" value="d">
+              <label for="q2d">Fall Protection</label>
+            </div>
+          </div>
+          <div class="feedback-message" id="feedback2"></div>
+        </div>
+        
+        <div class="quiz-question hidden" id="question3">
+          <h3><i class="fas fa-question-circle"></i> Question 3</h3>
+          <p>When should you inspect your PPE?</p>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="q3" id="q3a" value="a">
+              <label for="q3a">Only when it appears damaged</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q3" id="q3b" value="b">
+              <label for="q3b">Before each use</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q3" id="q3c" value="c">
+              <label for="q3c">Once per month</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q3" id="q3d" value="d">
+              <label for="q3d">Only when directed by a supervisor</label>
+            </div>
+          </div>
+          <div class="feedback-message" id="feedback3"></div>
+        </div>
+        
+        <div class="quiz-question hidden" id="question4">
+          <h3><i class="fas fa-question-circle"></i> Question 4</h3>
+          <p>What should you do with damaged PPE?</p>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="q4" id="q4a" value="a">
+              <label for="q4a">Continue using it until a replacement is available</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q4" id="q4b" value="b">
+              <label for="q4b">Try to repair it yourself</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q4" id="q4c" value="c">
+              <label for="q4c">Replace it immediately</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q4" id="q4d" value="d">
+              <label for="q4d">Ask a colleague if they think it's still safe</label>
+            </div>
+          </div>
+          <div class="feedback-message" id="feedback4"></div>
+        </div>
+        
+        <div class="quiz-question hidden" id="question5">
+          <h3><i class="fas fa-question-circle"></i> Question 5</h3>
+          <p>Who is responsible for ensuring PPE is properly used in the workplace?</p>
+          <div class="quiz-options">
+            <div class="quiz-option">
+              <input type="radio" name="q5" id="q5a" value="a">
+              <label for="q5a">Only the safety manager</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q5" id="q5b" value="b">
+              <label for="q5b">Only individual workers</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q5" id="q5c" value="c">
+              <label for="q5c">Only supervisors</label>
+            </div>
+            <div class="quiz-option">
+              <input type="radio" name="q5" id="q5d" value="d">
+              <label for="q5d">Both employers and employees</label>
+            </div>
+          </div>
+          <div class="feedback-message" id="feedback5"></div>
+        </div>
+        
+        <div class="quiz-buttons">
+          <button id="submitButton" class="btn">Submit Answer</button>
+          <button id="nextButton" class="btn hidden">Next Question</button>
+        </div>
+      </div>
+      
+      <div class="result-summary" id="quizResults">
+        <h3>PPE Training Quiz Results</h3>
+        <div class="score-display"><span id="scoreValue">0</span>/5</div>
+        <div class="result-message" id="resultMessage"></div>
+        <button id="certificateButton" class="certificate-button">
+          <i class="fas fa-certificate"></i> Generate Certificate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <img src="https://finelineinfra.com/wp-content/uploads/2024/12/SVG-FINELINE.svg" alt="FineLine Infra Logo" class="footer-logo">
+      <p>© 2025 FineLine Infra. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <p>Safety First. Every Day.</p>
+      <p>safety@finelineinfra.com</p>
+    </div>
+  </footer>
+
+  <a href="index.html" class="back-to-menu">
+    <svg class="back-to-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Back to Training Menu
+  </a>
+
+  <script>
+    // Quiz functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const questions = document.querySelectorAll('.quiz-question');
+      const submitButton = document.getElementById('submitButton');
+      const nextButton = document.getElementById('nextButton');
+      const quizResults = document.getElementById('quizResults');
+      const scoreValue = document.getElementById('scoreValue');
+      const resultMessage = document.getElementById('resultMessage');
+      const certificateButton = document.getElementById('certificateButton');
+      
+      let currentQuestion = 0;
+      let score = 0;
+      const correctAnswers = ['b', 'c', 'b', 'c', 'd'];
+      
+      // Submit button click handler
+      submitButton.addEventListener('click', function() {
+        const currentQuestionElement = questions[currentQuestion];
+        const selectedOption = currentQuestionElement.querySelector('input[type="radio"]:checked');
+        const feedbackElement = document.getElementById(`feedback${currentQuestion + 1}`);
+        
+        if (selectedOption) {
+          const answer = selectedOption.value;
+          const correct = answer === correctAnswers[currentQuestion];
+          
+          if (correct) {
+            feedbackElement.textContent = 'Correct!';
+            feedbackElement.className = 'feedback-message correct-feedback';
+            score++;
+          } else {
+            feedbackElement.textContent = 'Incorrect. Please try again.';
+            feedbackElement.className = 'feedback-message incorrect-feedback';
+          }
+          
+          feedbackElement.style.display = 'block';
+          submitButton.classList.add('hidden');
+          nextButton.classList.remove('hidden');
+          
+          // Disable all inputs after submission
+          const inputs = currentQuestionElement.querySelectorAll('input');
+          inputs.forEach(input => {
+            input.disabled = true;
+          });
+        } else {
+          alert('Please select an answer before submitting.');
+        }
+      });
+      
+      // Next button click handler
+      nextButton.addEventListener('click', function() {
+        currentQuestion++;
+        
+        if (currentQuestion < questions.length) {
+          // Hide all questions
+          questions.forEach(question => {
+            question.classList.add('hidden');
+          });
+          
+          // Show current question
+          questions[currentQuestion].classList.remove('hidden');
+          
+          // Reset buttons
+          submitButton.classList.remove('hidden');
+          nextButton.classList.add('hidden');
+        } else {
+          // Quiz completed
+          questions.forEach(question => {
+            question.classList.add('hidden');
+          });
+          
+          submitButton.classList.add('hidden');
+          nextButton.classList.add('hidden');
+          
+          // Display results
+          scoreValue.textContent = score;
+          
+          if (score === 5) {
+            resultMessage.textContent = 'Excellent! You've mastered the PPE training materials.';
+          } else if (score >= 3) {
+            resultMessage.textContent = 'Good job! You've demonstrated solid knowledge of PPE.';
+          } else {
+            resultMessage.textContent = 'Please review the material and try again to improve your score.';
+          }
+          
+          quizResults.style.display = 'block';
+        }
+      });
+      
+      // Certificate button
+      certificateButton.addEventListener('click', function() {
+        alert('Your certificate has been generated and sent to your email address.');
+      });
+    });
+  </script>
+</body>
+</html>

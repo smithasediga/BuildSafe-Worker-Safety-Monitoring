@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Modules</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --deep-blue: #1a365d;
+      --bright-blue: #3182ce;
+      --soft-blue: #bee3f8;
+      --pale-gray: #f7fafc;
+      --text-dark: #2d3748;
+      --success-green: #38a169;
+    }
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background-color: var(--pale-gray);
+      color: var(--text-dark);
+    }
+/* Header */
+        header {
+            background:  var(--deep-blue);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('') center/cover no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        header .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo-img {
+            height: 90px;
+            margin-right: 1rem;
+        }
+
+        header .logo {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        header .title {
+            font-size: 2.3rem;
+            margin-top: 0.5rem;
+        }
+
+        header .tagline {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            opacity: 2.2;
+        }
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: var(--deep-blue);
+    }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .module-card {
+      background: var(--soft-blue);
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .module-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    }
+    .module-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--bright-blue);
+    }
+    .module-preview {
+      width: 100%;
+      height: 180px;
+      background-color: var(--pale-gray);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background-size: cover;
+      background-position: center;
+    }
+    button {
+      background-color: var(--bright-blue);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: var(--deep-blue);
+    }
+    .certificate {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: var(--success-green);
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+        /* Footer */
+        footer {
+            background: var(--deep-blue);
+            color: #fff;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left,
+        .footer-right {
+            text-align: left;
+        }
+
+        .footer-logo {
+            height: 50px;
+        }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="https://finelineinfra.com/wp-content/uploads/2024/12/SVG-FINELINE.svg"
+                    alt="FineLine Infra Logo" class="logo-img">
+                <div class="logo"></div>
+            </div>
+            <div>
+                <div class="title">Secure. Aware. Safe.</div>
+                <div class="tagline">Building with care, because every life matters..</div>
+            </div>
+        </div>
+    </header>
+  <div class="container">
+    <h1>Available Training Modules</h1>
+
+    <div class="module-grid">
+      <div class="module-card" onclick="location.href='ppe-training.html'">
+        <div class="module-preview" style="background-image: url('https://th.bing.com/th/id/OIP.IoC56X9RPaVaS4FbXWVoFwHaEK?rs=1&pid=ImgDetMain');"></div>
+        <div class="module-title">PPE Training</div>
+        <p>Learn the proper usage of Personal Protective Equipment (PPE).</p>
+      </div>
+
+      <div class="module-card" onclick="location.href='fire-training.html'">
+        <div class="module-preview" style="background-image: url('https://thumbs.dreamstime.com/b/fire-safety-concept-design-vector-illustration-extinguishing-77281354.jpg');"></div>
+        <div class="module-title">Fire Safety</div>
+        <p>Understand safety protocols to handle fire hazards on site.</p>
+      </div>
+
+      <div class="module-card" onclick="location.href='electrical-training.html'">
+        <div class="module-preview" style="background-image: url('https://www.datocms-assets.com/16247/1688404503-electrical-safety-tips-1.png?w=1000&fit=max&fm=jpg');"></div>
+        <div class="module-title">Electrical Safety</div>
+        <p>Identify and mitigate electrical hazards to ensure site safety.</p>
+      </div>
+    </div>
+  </div>
+    <footer>
+        <div class="footer-left">
+            <strong>FineLine Infra</strong><br>
+            #455, 2nd Cross, 3rd Main, 3rd Block, WOC Road, Basaveshwar Nagar, Bangalore – 560079.
+        </div>
+        <div class="footer-right">
+            Email: finelineinfra.blr@gmail.com | Call: +91 9844740512 / 8861882512
+        </div>
+        <img src="https://finelineinfra.com/wp-content/uploads/2024/12/SVG-FINELINE.svg" alt="FineLine Infra Logo"
+            class="footer-logo">
+    </footer>
+</body>
+</html>
